@@ -6,7 +6,6 @@
 #### No backend maintenance needed, easy to scale and offline, no cost for waiting time.
 
 ### PWAs : 
-#### Instant loading, offline support, push notifications, “add to home screen” prompt,
-responsive design, and cross-platform compatibility.
+#### Instant loading, offline support, push notifications, “add to home screen” prompt, responsive design, and cross-platform compatibility.
 
 
