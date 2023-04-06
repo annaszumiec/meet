@@ -8,4 +8,5 @@
 ### PWAs : 
 #### Instant loading, offline support, push notifications, “add to home screen” prompt, responsive design, and cross-platform compatibility.
 
-[embed]https://docs.google.com/document/d/e/2PACX-1vRV4lC3kC0WtiEHRSowmE-GPo1CStZ-gAnuDH9L8YUDjL4dncJNgb4uONlRgZ5k1YVSnCogVuCA4LTZ/pub[embed]
+[USER STORIES](https://docs.google.com/document/d/e/2PACX-1vRV4lC3kC0WtiEHRSowmE-GPo1CStZ-gAnuDH9L8YUDjL4dncJNgb4uONlRgZ5k1YVSnCogVuCA4LTZ/pub)
+
