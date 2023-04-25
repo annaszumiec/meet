@@ -52,7 +52,7 @@
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
       const getAuthURL =
-        "https://90tqj1rs27.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
+        "https://90tqj1rs27.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}/ACTUAL_CODE_VAR";
 
       getURLElement.onclick = function () {
         fetch(getAuthURL)
