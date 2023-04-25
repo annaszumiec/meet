@@ -60,7 +60,7 @@ module.exports.getAuthURL = async () => {
   };
 };
 
-module.exports.getAccessToken = event => {
+module.exports.getAccessToken = async (event) => {
   // The values used to instantiate the OAuthClient are at the top of the file
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
@@ -88,7 +88,8 @@ module.exports.getAccessToken = event => {
       return {
         statusCode: 200,
         headers: {
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
         },
         body: JSON.stringify(token),
       };
@@ -98,9 +99,6 @@ module.exports.getAccessToken = event => {
       console.error(err);
       return {
         statusCode: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        },
         body: JSON.stringify(err),
       };
     });
