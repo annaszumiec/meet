@@ -2,7 +2,7 @@
   "name": "meet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://annaszumiec.github.io/meet",
+  "homepage": "https://annaszumiec.github.io/meet/",
   "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -61,7 +61,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/annaszumiec/meet.git"
+    "url": "git+https://github.com/annaszumiec/meet/.git"
   },
   "author": "",
   "license": "ISC",

@@ -35,6 +35,8 @@ class NumberOfEvents extends Component {
                     min="0"
                 />
 
+
+
             </div>
         );
     }
