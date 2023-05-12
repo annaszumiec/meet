@@ -10,6 +10,10 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
+    eventCount: 32,
+    selectedCity: null,
+    warningText: "",
+    showWelcomeScreen: undefined,
   };
 
   componentDidMount() {
