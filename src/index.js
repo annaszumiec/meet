@@ -6,6 +6,10 @@ import { render } from 'react-dom'; // <- This is the correct import // statemen
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as atatus from 'atatus-spa';
+
+atatus.config('4ec774bd8fa740eda0240fc49f218862').install();
+
 // const root = //ReactDOM.createRoot(document.getElementById('root'));
 const root = document.getElementById('root'); // <- This is the //correct method call for React version 17
 render(
@@ -41,3 +45,8 @@ render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+
+atatus.notify(new Error('Test Atatus Setup'));
