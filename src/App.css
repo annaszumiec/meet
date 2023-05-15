@@ -77,12 +77,12 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #444b4b;
+  background-color: #797979;;
   color: #eee;
 }
 
 .number{
-  margin-bottom: 50px;
+  margin-bottom: 50px ;
 }
 .event {
   background-color: white;
@@ -91,10 +91,11 @@ input[type="number"] {
   text-align: left;
   border-radius: 4px;
   position: relative;
+  color: #4b4a4a;
 }
 
 .details-button{
-  margin-top: 20px;
+  margin-top: 40px;
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
@@ -102,8 +103,9 @@ input[type="number"] {
   outline: none;
   cursor: pointer;
   border: none;
-  background-color: #444b4b;
-  color: white;
+  background-color: #ededed;
+  font-weight: 600;
+  
 }
 
 .name {
