@@ -49,4 +49,4 @@ reportWebVitals();
 
 
 
-atatus.notify(new Error('Test Atatus Setup'));
+// atatus.notify(new Error('Test Atatus Setup'));
