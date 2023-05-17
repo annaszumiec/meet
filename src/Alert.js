@@ -9,6 +9,7 @@ class Alert extends Component {
     getStyle = () => {
         return {
             color: this.color,
+
         };
     }
 
@@ -38,7 +39,7 @@ class WarningAlert extends Alert {
 class ErrorAlert extends Alert {
     constructor(props) {
         super(props);
-        this.color = '#FE1438';
+        this.color = '#B10303';
     }
 }
 
