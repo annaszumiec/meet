@@ -4,11 +4,18 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { extractLocations, getEvents, checkToken, getAccessToken } from "./api";
-// import { extractLocations, getEvents, } from "./api"; //local check
 import { WarningAlert } from "./Alert";
 import WelcomeScreen from "./WelcomeScreen";
-
-
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import EventGenre from "./EventGenre";
 
 class App extends Component {
   state = {
@@ -18,26 +25,22 @@ class App extends Component {
     selectedCity: null,
     warningText: "",
     showWelcomeScreen: undefined,
-
   };
 
-  //local check
-  // componentDidMount() {
-  //   this.mounted = true;
-  //   getEvents().then((events) => {
-  //     if (this.mounted) {
-  //       this.setState({ events, locations: extractLocations(events) });
-  //     }
-  //   });
-  // }
-
-  // componentWillUnmount() {
-  //   this.mounted = false;
-  // }
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location)
+        .length;
+      const city = location.split(", ").shift();
+      return { city, number };
+    });
+    return data;
+  };
 
   async componentDidMount() {
     this.mounted = true;
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = localStorage.getItem("access_token");
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = await searchParams.get("code");
@@ -47,7 +50,7 @@ class App extends Component {
         if (this.mounted) {
           this.setState({
             events: events,
-            locations: extractLocations(events)
+            locations: extractLocations(events),
           });
         }
       });
@@ -57,14 +60,13 @@ class App extends Component {
     this.mounted = false;
   }
 
-
   promptOfflineWarning = () => {
     if (!navigator.onLine) {
       this.setState({
-        warningText: 'You are offline, so events may not be up to date'
-      })
+        warningText: "You are offline, so events may not be up to date",
+      });
     }
-  }
+  };
 
   updateEvents = (location, eventCount) => {
     if (!eventCount) {
@@ -135,10 +137,33 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           updateEvents={this.updateEvents}
         />
-        <EventList events={this.state.events} />
-        <WarningAlert text={this.state.offlineText}
-        />
+        <h4>Event Capacity Percentage Calculator</h4>
+        <EventGenre events={this.state.events} />
+        <h4 className="event-subtitle">Events in each city</h4>
+        <ResponsiveContainer height={400}>
+          <ScatterChart
+            margin={{
+              top: 60,
+              right: 20,
+              bottom: 60,
+              left: 10,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="city" type="category" name="City" />
+            <YAxis
+              dataKey="number"
+              type="number"
+              name="Number of events"
+              allowDecimals={false}
+            />
+            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+            <Scatter data={this.getData()} fill="#727272" />
+          </ScatterChart>
+        </ResponsiveContainer>
 
+        <EventList events={this.state.events} />
+        <WarningAlert text={this.state.offlineText} />
       </div>
     );
   }
