@@ -107,8 +107,8 @@ class App extends Component {
           this.state.locations === "all"
             ? events
             : events.filter(
-                (event) => this.state.selectedCity === event.location
-              );
+              (event) => this.state.selectedCity === event.location
+            );
         const shownEvents = locationEvents.slice(0, eventCount);
         this.setState({
           events: shownEvents,
@@ -139,13 +139,13 @@ class App extends Component {
         />
         <h4>Event Capacity Percentage Calculator</h4>
         <EventGenre events={this.state.events} />
-        <h4>Events in each city</h4>
+        <h4 className="event-subtitle">Events in each city</h4>
         <ResponsiveContainer height={400}>
           <ScatterChart
             margin={{
-              top: 20,
+              top: 60,
               right: 20,
-              bottom: 10,
+              bottom: 60,
               left: 10,
             }}
           >

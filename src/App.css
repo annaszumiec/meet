@@ -107,7 +107,7 @@ input[type="number"] {
 }
 
 .event {
-  background-color: white;
+  background-color: #fdfdfd;
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
@@ -224,9 +224,8 @@ input[type="number"] {
 }
 .btn-text {
   float: right;
-
   padding-top: 15px;
-  padding-right: 25px;
+  padding-right: 20px;
   color: #ffffff;
   font-size: 12px;
   letter-spacing: 0.2px;
